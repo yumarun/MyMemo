@@ -1,0 +1,15 @@
+D:\OtherProg\MyMemo\MyMemo\bin\Debug\net6.0\MyMemo.exe
+D:\OtherProg\MyMemo\MyMemo\bin\Debug\net6.0\MyMemo.deps.json
+D:\OtherProg\MyMemo\MyMemo\bin\Debug\net6.0\MyMemo.runtimeconfig.json
+D:\OtherProg\MyMemo\MyMemo\bin\Debug\net6.0\MyMemo.dll
+D:\OtherProg\MyMemo\MyMemo\bin\Debug\net6.0\MyMemo.pdb
+D:\OtherProg\MyMemo\MyMemo\obj\Debug\net6.0\MyMemo.csproj.AssemblyReference.cache
+D:\OtherProg\MyMemo\MyMemo\obj\Debug\net6.0\MyMemo.GeneratedMSBuildEditorConfig.editorconfig
+D:\OtherProg\MyMemo\MyMemo\obj\Debug\net6.0\MyMemo.AssemblyInfoInputs.cache
+D:\OtherProg\MyMemo\MyMemo\obj\Debug\net6.0\MyMemo.AssemblyInfo.cs
+D:\OtherProg\MyMemo\MyMemo\obj\Debug\net6.0\MyMemo.csproj.CoreCompileInputs.cache
+D:\OtherProg\MyMemo\MyMemo\obj\Debug\net6.0\MyMemo.dll
+D:\OtherProg\MyMemo\MyMemo\obj\Debug\net6.0\refint\MyMemo.dll
+D:\OtherProg\MyMemo\MyMemo\obj\Debug\net6.0\MyMemo.pdb
+D:\OtherProg\MyMemo\MyMemo\obj\Debug\net6.0\MyMemo.genruntimeconfig.cache
+D:\OtherProg\MyMemo\MyMemo\obj\Debug\net6.0\ref\MyMemo.dll
