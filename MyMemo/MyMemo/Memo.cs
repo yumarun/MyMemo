@@ -62,6 +62,7 @@ namespace MyMemo
             }
 
             TemporaryTitle = newTitle;
+            MemoManager._changedMemoTitle.Enqueue(_memo.Title);
             EngMemoProcessing();
             
         }
@@ -93,7 +94,7 @@ namespace MyMemo
             latestMemo.Sentences = _memo.Sentences;
             latestMemo.FileName = $"{_memo.Title}.json";
             string json = JsonSerializer.Serialize(latestMemo);
-            using (var writer = new StreamWriter($"{ConfigManager._configJson.LocalPass}/{latestMemo.Title}.json"))
+            using (var writer = new StreamWriter($"{ConfigManager._configJson.LocalPass}/{latestMemo.Title}.json", false, UTF8Encoding.UTF8))
             {
                 writer.WriteLine(json);
             }

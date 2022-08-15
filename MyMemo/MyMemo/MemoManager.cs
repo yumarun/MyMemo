@@ -11,9 +11,11 @@ namespace MyMemo
     {
         public static List<Memo> _memos = new List<Memo>();
 
-        private static Queue<int> _changedMemoIdx = new Queue<int>();
+        // ↓ 後でprivateに
+        public static Queue<int> _changedMemoIdx = new Queue<int>();
 
-        private static Queue<string> _changedMemoTitle = new Queue<string>();
+        // ↓ 後でprivateに
+        public static Queue<string> _changedMemoTitle = new Queue<string>();
 
         public static Dictionary<string, int> _title_Idx = new Dictionary<string, int>();
 
@@ -59,6 +61,12 @@ namespace MyMemo
                 _memos[idx].ReflectChange();
             }
 
+            // Delete old json.
+            while (_changedMemoTitle.Count != 0)
+            {
+                var title = _changedMemoTitle.Dequeue();
+                File.Delete($"{ConfigManager._configJson.LocalPass}/{title}.json");
+            }
         }
 
         public static void AddToQueue(int idx)

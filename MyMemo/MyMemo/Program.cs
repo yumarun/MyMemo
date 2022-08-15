@@ -19,7 +19,18 @@ namespace MyMemo
 
                 // Handleing inputs.
                 HandleInput(inputs);
-                
+                Console.WriteLine("--");
+                Console.WriteLine("idx queue");
+                foreach (var t1 in MemoManager._changedMemoIdx)
+                {
+                    Console.WriteLine(t1);
+                }
+                Console.WriteLine("title queue");
+                foreach (var t2 in MemoManager._changedMemoTitle)
+                {
+                    Console.WriteLine(t2);
+                }
+                Console.WriteLine("--");
                 
 
                 Console.WriteLine();
