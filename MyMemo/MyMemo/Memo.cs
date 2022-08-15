@@ -40,12 +40,7 @@ namespace MyMemo
             Console.WriteLine("----");
         }
 
-        // User must call this function before calling below functions;
-        public void Prepare()
-        {
-            TemporaryTitle = _memo.Title;
-            TemporarySentences = _memo.Sentences;
-        }
+        
 
         // Changing title of this memo.
         public void ChangeTitle(string newTitle)
@@ -63,7 +58,7 @@ namespace MyMemo
             }
 
             TemporaryTitle = newTitle;
-            MemoManager._changedMemoTitle.Enqueue(_memo.Title);
+            MemoManager._memosToBeDeletedLater.Enqueue(_memo.Title);
             MemoManager.AddToQueue(_memoId);
             if (ConfigManager._configJson.IsAutoSave)
             {

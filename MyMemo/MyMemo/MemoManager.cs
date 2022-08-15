@@ -15,7 +15,7 @@ namespace MyMemo
         public static Queue<int> _changedMemoIdx = new Queue<int>();
 
         // ↓ 後でprivateに
-        public static Queue<string> _changedMemoTitle = new Queue<string>();
+        public static Queue<string> _memosToBeDeletedLater = new Queue<string>();
 
         public static Dictionary<string, int> _title_Idx = new Dictionary<string, int>();
 
@@ -61,9 +61,9 @@ namespace MyMemo
             }
 
             // Delete old json.
-            while (_changedMemoTitle.Count != 0)
+            while (_memosToBeDeletedLater.Count != 0)
             {
-                var title = _changedMemoTitle.Dequeue();
+                var title = _memosToBeDeletedLater.Dequeue();
                 File.Delete($"{ConfigManager._configJson.LocalPass}/{title}.json");
             }
         }
@@ -92,6 +92,17 @@ namespace MyMemo
             MemoManager._memos.Add(memo);
             _changedMemoIdx.Enqueue(MemoManager._memos.Count - 1);
             _title_Idx.Add(title, MemoManager._memos.Count - 1);
+
+            if (ConfigManager._configJson.IsAutoSave)
+            {
+                Save();
+            }
+        }
+
+        public static void DeleteMemo(string title)
+        {
+            _memos.RemoveAt(Utilities.GetMemoIndexFromIndexOrTitleString(title));
+            _memosToBeDeletedLater.Enqueue(title);
 
             if (ConfigManager._configJson.IsAutoSave)
             {

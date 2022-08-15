@@ -26,7 +26,7 @@ namespace MyMemo
                     Console.WriteLine(t1);
                 }
                 Console.WriteLine("title queue");
-                foreach (var t2 in MemoManager._changedMemoTitle)
+                foreach (var t2 in MemoManager._memosToBeDeletedLater)
                 {
                     Console.WriteLine(t2);
                 }
@@ -153,6 +153,35 @@ namespace MyMemo
                 else
                 {
                     MemoManager.CreateNewMemo(inputs[1]);
+                }
+            }
+            else if (inputs[0] == command.DeleteMemo)
+            {
+                if (inputs.Length != 2)
+                {
+                    Console.WriteLine("This command need 2 args.");
+                }
+                else
+                {
+                    if (!MemoManager._title_Idx.ContainsKey(inputs[1]))
+                    {
+                        Console.WriteLine("This title doesn't exist.");
+                    }
+                    else
+                    {
+                        Console.Write("Do you really delete this memo ? (Answer \"yes\" or \"no\".) >>> ");
+                        var yesNo = Console.ReadLine();
+                        if (yesNo != null)
+                        {
+                            yesNo = yesNo.ToLower();
+                            if (yesNo == "yes")
+                            {
+                                MemoManager.DeleteMemo(inputs[1]);
+                                Console.WriteLine($"Memo: {inputs[1]} was deleted.");
+                            }
+                        }
+
+                    }
                 }
             }
             else
