@@ -74,7 +74,17 @@ namespace MyMemo
             _changedMemoIdx.Enqueue(idx);
         }
 
-        
+        public static void DisplayMemoList()
+        {
+            Console.WriteLine("----MEMO LIST------------");
+
+            for (var i = 0; i < _memos.Count; i++)
+            {
+                Console.WriteLine($"{i}: {_memos[i]._memo.Title}  -- has {_memos[i]._memo.Sentences.Count} contents.");
+            }
+
+            Console.WriteLine("-------------------------");
+        }
         
     }
 }

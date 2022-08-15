@@ -122,6 +122,17 @@ namespace MyMemo
                     }
                 }
             }
+            else if (inputs[0] == command.DisplayMemoList)
+            {
+                if (inputs.Length != 1)
+                {
+                    Console.WriteLine("This command need 1 arg.");
+                }
+                else
+                {
+                    MemoManager.DisplayMemoList();
+                }
+            }
         }
     }
 }
