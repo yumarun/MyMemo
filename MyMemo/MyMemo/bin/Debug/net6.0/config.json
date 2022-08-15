@@ -1,0 +1,18 @@
+{
+  "LocalPass": "D:/tmp/mymemoapp",
+  "IsDisplayingMemoListEveryTime": true,
+  "IsAutoSave": true,
+  "Commands": {
+    "Quit": "quit",
+    "Save": "save",
+    "DisplayCommands": "cmd",
+    "DisplayMemoList": "ls",
+    "CreateMemo": "create",
+    "DeleteMemo": "remove",
+    "AddLineToMemo": "w",
+    "DeleteLineFromMemo": "d",
+    "DeleteAllLinesFromMemo": "",
+    "DisplayMemoContent": "cat",
+    "ChangeMemoTitle": "chttl"
+  }
+}
