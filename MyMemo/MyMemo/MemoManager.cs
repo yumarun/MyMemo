@@ -37,8 +37,7 @@ namespace MyMemo
                 using (var reader = new StreamReader(memoFiles[i]))
                 {
                     MemoJson tmpJson = JsonSerializer.Deserialize<MemoJson>(reader.ReadToEnd());
-                    Memo tmpMemo = new Memo(tmpJson);
-                    tmpMemo._memoId = i;
+                    Memo tmpMemo = new Memo(tmpJson, i);
                     _memos.Add(tmpMemo);
                 }
             }
@@ -84,6 +83,20 @@ namespace MyMemo
             }
 
             Console.WriteLine("-------------------------");
+        }
+
+        public static void CreateNewMemo(string title)
+        {
+            var memojson = new MemoJson(title);
+            var memo = new Memo(memojson, MemoManager._memos.Count);
+            MemoManager._memos.Add(memo);
+            _changedMemoIdx.Enqueue(MemoManager._memos.Count - 1);
+            _title_Idx.Add(title, MemoManager._memos.Count - 1);
+
+            if (ConfigManager._configJson.IsAutoSave)
+            {
+                Save();
+            }
         }
         
     }

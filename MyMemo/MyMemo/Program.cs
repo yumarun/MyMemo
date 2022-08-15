@@ -133,6 +133,32 @@ namespace MyMemo
                     MemoManager.DisplayMemoList();
                 }
             }
+            else if (inputs[0] == command.DisplayCommands)
+            {
+                if (inputs.Length != 1)
+                {
+                    Console.WriteLine("This command need 1 arg.");
+                }
+                else
+                {
+                    ConfigManager.DisplayCommands();
+                }
+            }
+            else if (inputs[0] == command.CreateMemo)
+            {
+                if (inputs.Length != 2)
+                {
+                    Console.WriteLine("This command need 2 args.");
+                }
+                else
+                {
+                    MemoManager.CreateNewMemo(inputs[1]);
+                }
+            }
+            else
+            {
+                Console.WriteLine("This command doesn't exist.");
+            }
         }
     }
 }

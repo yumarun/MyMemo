@@ -18,9 +18,10 @@ namespace MyMemo
         List<string> TemporarySentences;
 
         
-        public Memo(MemoJson memo)
+        public Memo(MemoJson memo, int memoId)
         {
             _memo = memo;
+            _memoId = memoId;
             TemporaryTitle = _memo.Title;
             TemporarySentences = _memo.Sentences;
         }
@@ -63,7 +64,11 @@ namespace MyMemo
 
             TemporaryTitle = newTitle;
             MemoManager._changedMemoTitle.Enqueue(_memo.Title);
-            EngMemoProcessing();
+            MemoManager.AddToQueue(_memoId);
+            if (ConfigManager._configJson.IsAutoSave)
+            {
+                MemoManager.Save();
+            }
             
         }
 
@@ -88,38 +93,25 @@ namespace MyMemo
             TemporaryTitle = _memo.Title;
             TemporarySentences = _memo.Sentences;
 
-            MemoJson latestMemo = new MemoJson();
-            latestMemo.Title = _memo.Title;
+            MemoJson latestMemo = new MemoJson(_memo.Title);
             latestMemo.LastUpdatedTime = _memo.LastUpdatedTime;
             latestMemo.Sentences = _memo.Sentences;
-            latestMemo.FileName = $"{_memo.Title}.json";
             string json = JsonSerializer.Serialize(latestMemo);
             using (var writer = new StreamWriter($"{ConfigManager._configJson.LocalPass}/{latestMemo.Title}.json", false, UTF8Encoding.UTF8))
             {
                 writer.WriteLine(json);
             }
 
-            //File.Delete($"{ConfigManager._configJson.LocalPass}");
-        }
-        
-
-        private void EngMemoProcessing()
-        {
-            MemoManager.AddToQueue(_memoId);
-            if (ConfigManager._configJson.IsAutoSave)
-            {
-                MemoManager.Save();
-            }
         }
     }
 
     public class MemoJson
     {
-        public MemoJson()
+        public MemoJson(string title)
         {
-            Title = "";
+            Title = title;
             LastUpdatedTime = DateTime.Now;
-            FileName = "";
+            FileName = $"{title}.json";
             Sentences = new List<string>();
         }
 

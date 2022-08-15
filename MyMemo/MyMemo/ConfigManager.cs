@@ -48,5 +48,16 @@ namespace MyMemo
 
 
         }
+
+        public static void DisplayCommands()
+        {
+            var option = new JsonSerializerOptions();
+            option.WriteIndented = true;
+            string json = JsonSerializer.Serialize(_configJson.Commands, option);
+
+            Console.WriteLine("---Command list---------");
+            Console.WriteLine(json);
+            Console.WriteLine("------------------------");
+        }
     }
 }
