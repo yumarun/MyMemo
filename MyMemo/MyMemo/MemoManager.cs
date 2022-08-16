@@ -101,7 +101,7 @@ namespace MyMemo
 
         public static void DeleteMemo(string title)
         {
-            _memos.RemoveAt(Utilities.GetMemoIndexFromIndexOrTitleString(title));
+            _memos.RemoveAt(Utilities.CheckOrGetMemoIndexFromIndexOrTitleString(title));
             _memosToBeDeletedLater.Enqueue(title);
 
             if (ConfigManager._configJson.IsAutoSave)

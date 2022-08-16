@@ -28,7 +28,6 @@ namespace MyMemo
         public string DeleteMemo { get; set; }
         public string AddLineToMemo { get; set; }
         public string DeleteLineFromMemo { get; set; }
-        public string DeleteAllLinesFromMemo { get; set; }
         public string DisplayMemoContent { get; set; }
         public string ChangeMemoTitle { get; set; }
     }

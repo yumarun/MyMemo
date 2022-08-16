@@ -11,7 +11,6 @@
     "DeleteMemo": "remove",
     "AddLineToMemo": "w",
     "DeleteLineFromMemo": "d",
-    "DeleteAllLinesFromMemo": "",
     "DisplayMemoContent": "cat",
     "ChangeMemoTitle": "chttl"
   }

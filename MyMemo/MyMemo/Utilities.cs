@@ -21,12 +21,20 @@ namespace MyMemo
             Console.WriteLine(jsonString);
         }
 
-        public static int GetMemoIndexFromIndexOrTitleString(string input)
+        public static int CheckOrGetMemoIndexFromIndexOrTitleString(string input)
         {
             int idx;
             if (int.TryParse(input, out idx))
             {
-                return idx;
+                if (idx < MemoManager._memos.Count)
+                {
+                    return idx;
+                }
+                else
+                {
+                    Console.WriteLine("This index is out of range.");
+                    return -1;
+                }
             }
             else
             {

@@ -77,6 +77,28 @@ namespace MyMemo
             }
 
             TemporarySentences.Add(sentence);
+            MemoManager.AddToQueue(_memoId);
+            if (ConfigManager._configJson.IsAutoSave)
+            {
+                MemoManager.Save();
+            }
+        }
+
+        // Remove a memo content.
+        public void DeleteAContentFromMemo(int idx)
+        {
+            if (idx >= _memo.Sentences.Count)
+            {
+                Console.WriteLine("Index is out of range.");
+                return;
+            } 
+
+            TemporarySentences.RemoveAt(idx);
+            MemoManager.AddToQueue(_memoId);
+            if (ConfigManager._configJson.IsAutoSave)
+            {
+                MemoManager.Save();
+            }
         }
         
         
