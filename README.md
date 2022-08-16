@@ -27,3 +27,8 @@
   - ex) d [メモ名 or メモの通し番号] [メモの消したい行の行番号]
 - ChangeMemoTitle ... 既存メモのタイトルを変更
   - ex) chttl [新しいタイトル]
+
+
+## 開発
+- Visual Studio 2022
+- net6.0
