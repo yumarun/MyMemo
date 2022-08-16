@@ -9,45 +9,28 @@ namespace MyMemo
         static void Main(string[] args)
         {
             Prepare();
-            Start();
+
+            PrintInfoBeforeInput();
+            Console.Write(">>> ");
 
 
             string line;
             while ((line = Console.ReadLine()) != "quit")
             {
+
+
                 string[] inputs = line.Split();
 
                 // Handleing inputs.
                 HandleInput(inputs);
-                Console.WriteLine("--");
-                Console.WriteLine("idx queue");
-                foreach (var t1 in MemoManager._changedMemoIdx)
-                {
-                    Console.WriteLine(t1);
-                }
-                Console.WriteLine("title queue");
-                foreach (var t2 in MemoManager._memosToBeDeletedLater)
-                {
-                    Console.WriteLine(t2);
-                }
-                Console.WriteLine("--");
-                
+
+                PrintInfoBeforeInput();
+
 
                 Console.WriteLine();
                 Console.Write(">>> ");
             }
 
-            //var tmp = new MemoJson();
-            //tmp.LastUpdatedTime = DateTime.Now;
-            //tmp.Sentences = new List<string>();
-            //tmp.Sentences.Add("a"); tmp.Sentences.Add("bbbb");
-            //var options = new JsonSerializerOptions { WriteIndented = true };
-            //string jsonString = JsonSerializer.Serialize(tmp, options);
-            //Console.WriteLine(jsonString);
-
-
-
-            Console.ReadLine();
         }
 
         static void Prepare()
@@ -56,12 +39,6 @@ namespace MyMemo
             MemoManager.Prepare();
         }
 
-        static void Start()
-        {
-            Console.WriteLine("Hello.");
-            Console.Write(">>> ");
-
-        }
 
         static void HandleInput(string[] inputs)
         {
@@ -198,10 +175,27 @@ namespace MyMemo
 
                 }
             }
+            else if (inputs[0] == command.Save)
+            {
+                if (inputs.Length != 1)
+                {
+                    Console.WriteLine("This command need 1 arg.");
+                    return;
+                }
+
+                MemoManager.Save();
+            }
             else
             {
                 Console.WriteLine("This command doesn't exist.");
             }
         }
+
+
+        static void PrintInfoBeforeInput()
+        {
+            MemoManager.DisplayMemoList();
+        }
+
     }
 }

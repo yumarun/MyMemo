@@ -29,8 +29,7 @@ namespace MyMemo
         {
             var memoPass = ConfigManager._configJson.LocalPass;
             string[] memoFiles = Directory.GetFiles(memoPass);
-            Console.WriteLine(memoFiles[0]);
-            Console.WriteLine(Path.GetFileName(memoFiles[0]));
+            
 
             for (var i = 0; i < memoFiles.Length; i++)
             {

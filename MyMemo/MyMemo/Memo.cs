@@ -30,14 +30,14 @@ namespace MyMemo
         // Outputting title and all contents of this memo.
         public void PrintContents()
         {
-            Console.WriteLine("----");
-            Console.WriteLine($"Title: {_memo.Title}");
-            Console.WriteLine($"MemoId: {_memoId}");
+            Console.WriteLine("----------");
+            Console.WriteLine($"| Title: {_memo.Title}");
+            Console.WriteLine($"| MemoId: {_memoId}");
             for (var i = 0; i < _memo.Sentences.Count; i++)
             {
-                Console.WriteLine($"{i}: {_memo.Sentences[i]}");
+                Console.WriteLine($"| {i}: {_memo.Sentences[i]}");
             }
-            Console.WriteLine("----");
+            Console.WriteLine("----------");
         }
 
         
