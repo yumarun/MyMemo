@@ -1,0 +1,15 @@
+D:\git\MyMemo\MyMemo\MyMemo\bin\Release\net6.0\MyMemo.exe
+D:\git\MyMemo\MyMemo\MyMemo\bin\Release\net6.0\MyMemo.deps.json
+D:\git\MyMemo\MyMemo\MyMemo\bin\Release\net6.0\MyMemo.runtimeconfig.json
+D:\git\MyMemo\MyMemo\MyMemo\bin\Release\net6.0\MyMemo.dll
+D:\git\MyMemo\MyMemo\MyMemo\bin\Release\net6.0\MyMemo.pdb
+D:\git\MyMemo\MyMemo\MyMemo\obj\Release\net6.0\MyMemo.csproj.AssemblyReference.cache
+D:\git\MyMemo\MyMemo\MyMemo\obj\Release\net6.0\MyMemo.GeneratedMSBuildEditorConfig.editorconfig
+D:\git\MyMemo\MyMemo\MyMemo\obj\Release\net6.0\MyMemo.AssemblyInfoInputs.cache
+D:\git\MyMemo\MyMemo\MyMemo\obj\Release\net6.0\MyMemo.AssemblyInfo.cs
+D:\git\MyMemo\MyMemo\MyMemo\obj\Release\net6.0\MyMemo.csproj.CoreCompileInputs.cache
+D:\git\MyMemo\MyMemo\MyMemo\obj\Release\net6.0\MyMemo.dll
+D:\git\MyMemo\MyMemo\MyMemo\obj\Release\net6.0\refint\MyMemo.dll
+D:\git\MyMemo\MyMemo\MyMemo\obj\Release\net6.0\MyMemo.pdb
+D:\git\MyMemo\MyMemo\MyMemo\obj\Release\net6.0\MyMemo.genruntimeconfig.cache
+D:\git\MyMemo\MyMemo\MyMemo\obj\Release\net6.0\ref\MyMemo.dll
